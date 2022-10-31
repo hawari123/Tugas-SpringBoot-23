@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
+import java.util.stream.Collector;
 
 @Service
 public class CategoryService {
@@ -15,6 +17,43 @@ public class CategoryService {
 
     @Transactional(readOnly = true)
     public List<Category> findAll(){
-        return repository.findAll();
+        List<Category> data = repository.findAllByIsDeleted(false);
+
+        return data;
+    }
+    @Transactional
+    public Category createData(Category param){
+        param.setCreatedDate(new Date());
+        param.setDeleted(false);
+        return repository.save(param);
+    }
+
+    @Transactional
+    public Category updateData(Category param, int id){
+        Category data = repository.findById(id).get();
+
+        if (data != null){
+            data.setCategoryName(param.getCategoryName() != null ? param.getCategoryName() : data.getCategoryName());
+            data.setUpdatedDate(new Date());
+
+            return repository.save(data);
+        }
+
+        return null;
+    }
+
+    @Transactional
+    public boolean deleteData(int id){
+        Category data = repository.findById(id).get();
+
+        if (data != null){
+            data.setDeleted(true);
+
+            repository.save(data);
+
+            return true;
+        }
+
+        return false;
     }
 }
