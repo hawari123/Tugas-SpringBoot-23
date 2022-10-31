@@ -1,6 +1,5 @@
 package id.sinaukoding.latihan.service;
 
-import id.sinaukoding.latihan.model.Customer;
 import id.sinaukoding.latihan.model.Store;
 import id.sinaukoding.latihan.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
