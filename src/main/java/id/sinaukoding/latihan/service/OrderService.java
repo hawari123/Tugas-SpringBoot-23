@@ -1,7 +1,8 @@
 package id.sinaukoding.latihan.service;
 
-
 import id.sinaukoding.latihan.model.Order;
+import id.sinaukoding.latihan.model.dto.OrderDTO;
+import id.sinaukoding.latihan.model.mapper.OrderMapper;
 import id.sinaukoding.latihan.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collector;
 
 @Service
 public class OrderService {
@@ -17,30 +17,32 @@ public class OrderService {
     private OrderRepository repository;
 
     @Transactional(readOnly = true)
-    public List<Order> findAll(){
+    public List<OrderDTO> findAll(){
         List<Order> data = repository.findAllByIsDeleted(false);
 
-        return data;
-    }
-    @Transactional
-    public Order createData(Order param){
-        param.setCreatedDate(new Date());
-        param.setDeleted(false);
-        return repository.save(param);
+        return OrderMapper.INSTANCE.toDtoList(data);
     }
 
     @Transactional
-    public Order updateData(Order param, int id){
+    public OrderDTO createData(OrderDTO param){
+        Order data = OrderMapper.INSTANCE.dtoToEntity(param);
+        data = repository.save(data);
+
+        return OrderMapper.INSTANCE.entityToDto(data);
+    }
+
+    @Transactional
+    public OrderDTO updateData(OrderDTO param, int id){
         Order data = repository.findById(id).get();
 
         if (data != null){
-            data.setOrderDate(param.getOrderDate() != null ? param.getOrderDate() : data.getOrderDate());
             data.setOrderStatus(param.getOrderStatus() != null ? param.getOrderStatus() : data.getOrderStatus());
+            data.setOrderDate(param.getOrderDate() != null ? param.getOrderDate() : data.getOrderDate());
             data.setRequiredDate(param.getRequiredDate() != null ? param.getRequiredDate() : data.getRequiredDate());
             data.setShippedDate(param.getShippedDate() != null ? param.getShippedDate() : data.getShippedDate());
             data.setUpdatedDate(new Date());
 
-            return repository.save(data);
+            return OrderMapper.INSTANCE.entityToDto(repository.save(data));
         }
 
         return null;
