@@ -7,18 +7,17 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "stores")
+@Table(name = "products")
 @Getter
 @Setter
 public class Product extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Integer ProductId;
+    private Integer productId;
 
     @Column
-    private String ProductName;
-
+    private String productName;
     @Column
     private String modelYears;
 

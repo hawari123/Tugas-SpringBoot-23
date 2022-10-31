@@ -1,6 +1,5 @@
 package id.sinaukoding.latihan.controller;
 
-import id.sinaukoding.latihan.model.Customer;
 import id.sinaukoding.latihan.model.Store;
 import id.sinaukoding.latihan.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +17,7 @@ public class StoreController {
     public ResponseEntity<?> getAllData(){
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
+
     @PostMapping("/add")
     public ResponseEntity<?> createData(@RequestBody Store param){
         Store data = service.createData(param);

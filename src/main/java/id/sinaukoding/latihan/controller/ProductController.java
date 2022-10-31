@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/Products")
+@RequestMapping("/products")
 public class ProductController {
     @Autowired
     private ProductService service;
@@ -18,6 +18,7 @@ public class ProductController {
     public ResponseEntity<?> getAllData(){
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
+
     @PostMapping("/add")
     public ResponseEntity<?> createData(@RequestBody Product param){
         Product data = service.createData(param);
