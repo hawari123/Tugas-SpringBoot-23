@@ -17,4 +17,10 @@ public class OrderDTO extends BaseDTO{
     private Date requiredDate;
 
     private Date shippedDate;
+
+    private CustomerDTO customer;
+
+    private StaffDTO staff;
+
+    private StoreDTO store;
 }

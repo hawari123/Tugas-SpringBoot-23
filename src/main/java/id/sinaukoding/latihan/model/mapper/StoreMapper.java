@@ -10,6 +10,7 @@ import java.util.List;
 @Mapper
 public interface StoreMapper {
     StoreMapper INSTANCE = Mappers.getMapper(StoreMapper.class);
+
     Store dtoToEntity(StoreDTO dto);
 
     StoreDTO entityToDto(Store param);
@@ -17,9 +18,5 @@ public interface StoreMapper {
     List<Store> toEntityList(List<StoreDTO> data);
 
     List<StoreDTO> toDtoList(List<Store> data);
-
-    StoreDTO fromStoreToStoreDTODTO(StoreDTO param);
-
-    List<StoreDTO> toStaffDTO(List<StoreDTO> data);
 
 }

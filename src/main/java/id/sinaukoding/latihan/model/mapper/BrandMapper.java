@@ -18,8 +18,4 @@ public interface BrandMapper {
 
     List<BrandDTO> toDtoList(List<Brand> data);
 
-    BrandDTO fromBrandToBrandDTO(BrandDTO param);
-
-    List<BrandDTO> toBrandDTO(List<BrandDTO> data);
-
 }

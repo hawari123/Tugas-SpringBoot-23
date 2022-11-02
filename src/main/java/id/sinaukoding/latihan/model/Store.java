@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "stores")
@@ -37,4 +37,9 @@ public class Store extends BaseEntity{
     @Column
     private String zipCode;
 
+    @OneToMany(mappedBy = "store")
+    private List<Staff> staffList;
+
+    @OneToMany(mappedBy = "store")
+    private List<Order> orderList;
 }

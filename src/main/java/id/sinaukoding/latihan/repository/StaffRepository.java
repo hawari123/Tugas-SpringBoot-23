@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface StaffRepository extends JpaRepository<Staff, Integer> {
     List<Staff> findAllByIsDeleted(boolean isDelete);
+
 }

@@ -1,0 +1,786 @@
+{
+	"info": {
+		"_postman_id": "25a45d84-0676-4cf2-be12-06402e9521d6",
+		"name": "Sinau Koding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16802237"
+	},
+	"item": [
+		{
+			"name": "Brand",
+			"item": [
+				{
+					"name": "Menambah Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\" : \"Samsung\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/brands/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"brands",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menampilkan Data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/brands/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"brands",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mengupdate Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\" : \"apa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/brands/update?id=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"brands",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menghapus Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/brands/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"brands",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Menambahkan Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\" : \"laptop\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menampilkan Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categories/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mengupdate Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\" : \"baju tidur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories/update?id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mengahapus Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categories/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Menambahkan Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Helmi\",\r\n    \"lastName\" : \"Trisedyan\",\r\n    \"phone\" : \"081987654321\",\r\n    \"email\" : \"helmi@gmail.com\",\r\n    \"street\" : \"dakota\",\r\n    \"city\" : \"kota Bandung\",\r\n    \"state\" : \"dsadsa\",\r\n    \"zipCode\" : \"A2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menampilkan Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customers/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mengupdate Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Burhan\",\r\n    \"lastName\" : \"Fuad\",\r\n    \"phone\" : \"081987654321\",\r\n    \"email\" : \"fuad@gmail.com\",\r\n    \"street\" : \"pasteur\",\r\n    \"city\" : \"Bandung\",\r\n    \"state\" : \"dsasd\",\r\n    \"zipCode\" : \"A3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers/update?id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menghapus Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customers/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Menmbahkan Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderStatus\" : \"dijalan\",\r\n    \"orderDate\" : \"2022-11-20\",\r\n    \"requiredDate\" : \"2022-10-30\",\r\n    \"shippedDate\" : \"2022-10-31\",\r\n    \"staff\" : {\r\n            \"createdDate\": \"2022-11-01T17:21:03.000+00:00\",\r\n            \"updatedDate\": \"2022-11-01T17:22:24.000+00:00\",\r\n            \"firstName\": \"apa\",\r\n            \"lastName\": \"burhan\",\r\n            \"phone\": \"08123456789\",\r\n            \"email\": \"Padli@gmail.com\",\r\n            \"active\": \"masuk\"\r\n        },\r\n        \"store\" : {\r\n            \"createdDate\": \"2022-10-31T03:44:51.000+00:00\",\r\n            \"storeName\": \"Gaming Store\",\r\n            \"phone\": \"08987654321\",\r\n            \"email\": \"gaming@gmail.com\",\r\n            \"street\": \"dakota\",\r\n            \"city\": \"Bandung\",\r\n            \"state\": 123,\r\n            \"zipCode\": \"A21\"\r\n        },\r\n        \"customer\": {\r\n            \"createdDate\": \"2022-10-31T01:54:27.000+00:00\",\r\n            \"firstName\": \"Burhanudin\",\r\n            \"lastName\": \"Hawari\",\r\n            \"phone\": \"08123456789\",\r\n            \"email\": \"burhan@gmail.com\",\r\n            \"street\": \"dakota\",\r\n            \"city\": \"Bandung\",\r\n            \"state\": \"asdasd\",\r\n            \"zipCode\": \"A1\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menampilkan Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mengupdate Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderStatus\" : \"sepanjang jalan\",\r\n    \"orderDate\" : \"2022-11-10\",\r\n    \"requiredDate\" : \"2022-10-20\",\r\n    \"shippedDate\" : \"2022-10-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/update?id=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menghapus Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Menambahkan Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Sepatu abal\",\r\n    \"modelYears\": 2022,\r\n    \"listPrice\": 200.000,\r\n    \"category\": {\r\n        \"categoryName\": \"sepatu\"\r\n    },\r\n    \"brand\": {\r\n        \"brandName\": \"Eiger\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/products/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menampilkan Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mengupdate Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"Sepatu Boot\",\r\n    \"modelYears\" : 2020,\r\n    \"listPrice\" : 100.000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/products/update?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menghapus Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/delete/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Staff",
+			"item": [
+				{
+					"name": "Menambahkan Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"coba lagi-lagi\",\r\n    \"lastName\": \"burhan\",\r\n    \"phone\": \"08123456789\",\r\n    \"email\": \"Padli@gmail.com\",\r\n    \"active\": \"masuk\",\r\n    \"store\": {\r\n            \"createdDate\": \"2022-10-31T03:44:51.000+00:00\",\r\n            \"storeId\": 1,\r\n            \"storeName\": \"Gaming Store\",\r\n            \"phone\": \"08987654321\",\r\n            \"email\": \"gaming@gmail.com\",\r\n            \"street\": \"dakota\",\r\n            \"city\": \"Bandung\",\r\n            \"state\": 123,\r\n            \"zipCode\": \"A21\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/staffs/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"staffs",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menampilkan Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/staffs/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"staffs",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mengupdate Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"apa-apa\",\r\n    \"lastName\" : \"apa-apa\",\r\n    \"phone\" : \"08123456789\",\r\n    \"email\" : \"apa-apa@gmail.com\",\r\n    \"active\" : \"masuk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/staffs/update?id=13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"staffs",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menghapus Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/staffs/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"staffs",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Menambahkan Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"storeName\" : \"clothes jualan\",\r\n    \"phone\" : \"08987654321\",\r\n    \"email\" : \"clothesg@gmail.com\",\r\n    \"street\" : \"dakota\",\r\n    \"city\" : \"Bandung\",\r\n    \"state\" : 123456,\r\n    \"zipCode\" : \"A21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/stores/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stores",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menampilkan Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/stores/find-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stores",
+								"find-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mengupdate Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"storeName\" : \"jualan baju\",\r\n    \"phone\" : \"08123456789\",\r\n    \"email\" : \"jualan@gmail.com\",\r\n    \"street\" : \"dakota\",\r\n    \"city\" : \"Bandung\",\r\n    \"state\" : 123456,\r\n    \"zipCode\" : \"A21012\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/stores/update?id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stores",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menghapus Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/stores/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stores",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -28,7 +28,16 @@ public class Order extends BaseEntity{
     @Column
     private Date shippedDate;
 
+    @ManyToOne
+    @JoinColumn(name = "store_id")
+    private Store store;
 
+    @ManyToOne
+    @JoinColumn(name = "staff_id")
+    private Staff staff;
 
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
 }
