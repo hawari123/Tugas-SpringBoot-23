@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "staffs")
@@ -30,5 +31,10 @@ public class Staff extends BaseEntity{
     @Column
     private String active;
 
+    @ManyToOne
+    @JoinColumn(name = "store_id")
+    private Store store;
 
+    @OneToMany(mappedBy = "staff")
+    private List<Order> orderList;
 }

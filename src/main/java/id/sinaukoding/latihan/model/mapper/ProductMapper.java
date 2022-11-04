@@ -10,6 +10,7 @@ import java.util.List;
 @Mapper
 public interface ProductMapper {
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
+
     Product dtoToEntity(ProductDTO dto);
 
     ProductDTO entityToDto(Product param);
@@ -17,9 +18,4 @@ public interface ProductMapper {
     List<Product> toEntityList(List<ProductDTO> data);
 
     List<ProductDTO> toDtoList(List<Product> data);
-
-    ProductDTO fromProductToProductDTO(ProductDTO param);
-
-    List<ProductDTO> toProductDTO(List<ProductDTO> data);
-
 }

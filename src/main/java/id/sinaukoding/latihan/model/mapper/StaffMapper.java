@@ -10,6 +10,7 @@ import java.util.List;
 @Mapper
 public interface StaffMapper {
     StaffMapper INSTANCE = Mappers.getMapper(StaffMapper.class);
+
     Staff dtoToEntity(StaffDTO dto);
 
     StaffDTO entityToDto(Staff param);
@@ -17,9 +18,5 @@ public interface StaffMapper {
     List<Staff> toEntityList(List<StaffDTO> data);
 
     List<StaffDTO> toDtoList(List<Staff> data);
-
-    StaffDTO fromStaffToStaffDTODTO(StaffDTO param);
-
-    List<StaffDTO> toStaffDTO(List<StaffDTO> data);
 
 }

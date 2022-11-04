@@ -18,4 +18,5 @@ public class StaffDTO extends BaseDTO{
 
     private String active;
 
+    private StoreDTO store;
 }
