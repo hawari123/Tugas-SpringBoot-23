@@ -80,8 +80,6 @@ public class ProductService {
 
         if (data != null) {
             data.setProductName(param.getProductName() != null ? param.getProductName() : data.getProductName());
-            data.setModelYears(param.getModelYears() != null ? param.getModelYears() : data.getModelYears());
-            data.setListPrice(param.getListPrice() != null ? param.getListPrice() : data.getListPrice());
             data.setUpdatedDate(new Date());
 
             return ProductMapper.INSTANCE.entityToDto(repository.save(data));

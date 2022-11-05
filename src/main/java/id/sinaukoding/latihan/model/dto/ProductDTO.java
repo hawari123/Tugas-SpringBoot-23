@@ -5,14 +5,14 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Getter
 @Setter
+@Getter
 public class ProductDTO extends BaseDTO{
     private Integer productId;
 
     private String productName;
 
-    private Integer modelYears;
+    private Integer modelYear;
 
     private BigDecimal listPrice;
 

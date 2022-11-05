@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class StoreDTO extends BaseDTO{
+public class StoreDTO extends BaseDTO {
     private Integer storeId;
 
     private String storeName;

@@ -1,7 +1,7 @@
 package id.sinaukoding.latihan.service;
 
-import id.sinaukoding.latihan.model.Store;
 import id.sinaukoding.latihan.model.dto.StoreDTO;
+import id.sinaukoding.latihan.model.Store;
 import id.sinaukoding.latihan.model.mapper.StoreMapper;
 import id.sinaukoding.latihan.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,12 +37,6 @@ public class StoreService {
 
         if (data != null){
             data.setStoreName(param.getStoreName() != null ? param.getStoreName() : data.getStoreName());
-            data.setPhone(param.getPhone() != null ? param.getPhone() : data.getPhone());
-            data.setEmail(param.getEmail() != null ? param.getEmail() : data.getEmail());
-            data.setStreet(param.getStreet() != null ? param.getStreet() : data.getStreet());
-            data.setCity(param.getCity() != null ? param.getCity() : data.getCity());
-            data.setState(param.getState() != null ? param.getState() : data.getState());
-            data.setZipCode(param.getZipCode() != null ? param.getZipCode() : data.getZipCode());
             data.setUpdatedDate(new Date());
 
             return StoreMapper.INSTANCE.entityToDto(repository.save(data));

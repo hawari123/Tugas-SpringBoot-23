@@ -5,9 +5,10 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
-@Entity
 @Table(name = "products")
+@Entity
 @Getter
 @Setter
 public class Product extends BaseEntity{
@@ -19,7 +20,7 @@ public class Product extends BaseEntity{
     private String productName;
 
     @Column
-    private Integer modelYears;
+    private Integer modelYear;
 
     @Column(columnDefinition = "DECIMAL(10, 2)")
     private BigDecimal listPrice;
@@ -31,5 +32,11 @@ public class Product extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand brand;
+
+    @OneToMany(mappedBy = "product")
+    private List<Stocks> stockList;
+
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItems;
 
 }

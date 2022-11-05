@@ -6,14 +6,13 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
 @Table(name = "stores")
+@Entity
 @Getter
 @Setter
 public class Store extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Integer storeId;
 
     @Column
@@ -32,10 +31,13 @@ public class Store extends BaseEntity{
     private String city;
 
     @Column
-    private Integer state;
+    private String state;
 
     @Column
     private String zipCode;
+
+    @OneToMany(mappedBy = "store")
+    private List<Stocks> stockList;
 
     @OneToMany(mappedBy = "store")
     private List<Staff> staffList;
