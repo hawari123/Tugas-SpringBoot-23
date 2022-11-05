@@ -1,5 +1,6 @@
 package id.sinaukoding.latihan.model.dto;
 
+import id.sinaukoding.latihan.model.enums.StatusOrder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +11,7 @@ import java.util.Date;
 public class OrderDTO extends BaseDTO{
     private Integer orderId;
 
-    private String orderStatus;
+    private StatusOrder statusOrder;
 
     private Date orderDate;
 
@@ -20,7 +21,7 @@ public class OrderDTO extends BaseDTO{
 
     private CustomerDTO customer;
 
-    private StaffDTO staff;
-
     private StoreDTO store;
+
+    private StaffDTO staff;
 }

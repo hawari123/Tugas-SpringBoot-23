@@ -1,23 +1,24 @@
 package id.sinaukoding.latihan.model;
 
+import id.sinaukoding.latihan.model.enums.StatusOrder;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
-@Entity
 @Table(name = "orders")
-@Getter
+@Entity
 @Setter
-public class Order extends BaseEntity{
+@Getter
+public class Order extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Integer orderId;
 
     @Column
-    private String orderStatus;
+    private StatusOrder statusOrder;
 
     @Column
     private Date orderDate;
@@ -29,6 +30,10 @@ public class Order extends BaseEntity{
     private Date shippedDate;
 
     @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    @ManyToOne
     @JoinColumn(name = "store_id")
     private Store store;
 
@@ -36,8 +41,6 @@ public class Order extends BaseEntity{
     @JoinColumn(name = "staff_id")
     private Staff staff;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
-
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems;
 }

@@ -10,6 +10,7 @@ import java.util.List;
 @Mapper
 public interface OrderMapper {
     OrderMapper INSTANCE = Mappers.getMapper(OrderMapper.class);
+
     Order dtoToEntity(OrderDTO dto);
 
     OrderDTO entityToDto(Order param);
@@ -17,5 +18,4 @@ public interface OrderMapper {
     List<Order> toEntityList(List<OrderDTO> data);
 
     List<OrderDTO> toDtoList(List<Order> data);
-
 }
